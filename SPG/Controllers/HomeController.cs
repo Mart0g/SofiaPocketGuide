@@ -14,5 +14,11 @@ namespace SPG.Controllers
 
             return View();
         }
+        public ActionResult Chat()
+        {
+            ViewBag.Title = "Chat";
+
+            return View();
+        }
     }
 }

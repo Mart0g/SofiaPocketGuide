@@ -40,3 +40,15 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+a.logo {
+    background: url(/Content/images/logo.png) no-repeat top;
+    display: block;
+    width: 150px;
+    height: 50px;
+    text-indent: -9999px;
+}
+
+.menu-nav {
+    float: right;
+}
