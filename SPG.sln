@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG", "SPG\SPG.csproj", "{E6FC1839-BF17-481B-BD57-3FBCC4855E3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.DataAccess", "SPG.DataAccess\SPG.DataAccess.csproj", "{5A166F45-2AD3-4579-978F-3E884A0BB572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.DataService", "SPG.DataService\SPG.DataService.csproj", "{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.DataViewModels", "SPG.DataViewModels\SPG.DataViewModels.csproj", "{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{E6FC1839-BF17-481B-BD57-3FBCC4855E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6FC1839-BF17-481B-BD57-3FBCC4855E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6FC1839-BF17-481B-BD57-3FBCC4855E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A166F45-2AD3-4579-978F-3E884A0BB572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A166F45-2AD3-4579-978F-3E884A0BB572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A166F45-2AD3-4579-978F-3E884A0BB572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A166F45-2AD3-4579-978F-3E884A0BB572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
