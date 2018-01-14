@@ -10,13 +10,19 @@ namespace SPG.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Home";
 
             return View();
         }
         public ActionResult Chat()
         {
             ViewBag.Title = "Chat";
+
+            return View();
+        }
+        public ActionResult About()
+        {
+            ViewBag.Title = "About";
 
             return View();
         }

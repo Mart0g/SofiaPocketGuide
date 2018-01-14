@@ -1,0 +1,31 @@
+﻿@Styles.Render("~/Content/Site.css")
+@Styles.Render("~/Content/Chat.css")
+
+<script type='text/javascript'>
+    var newNode = document.createElement('div');
+    newNode.className = 'textNode news content';
+</script>
+
+<div class="container-chat">
+    <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
+    <p>Здравей! С какво мога да помогна днес?</p>
+    <span class="time-right">@DateTime.Now</span>
+</div>
+
+<div class="container-chat darker">
+    <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;">
+    <p>To Do</p>
+    <span class="time-left">@DateTime.Now</span>
+</div>
+
+<div class="container">
+    <div class="col-md-6">
+        <textarea rows="3" class="container-chat lighter form-control"></textarea>
+    </div>
+    <div class="col-md-6">
+        <center>
+            <p class="send">@Html.ActionLink("Изпрати >>", "Chat", "Home", null, new { @class = "btn btn-primary btn-large", onclick = "generateResponse()" })</p>
+        </center>
+    </div>
+</div>
+
