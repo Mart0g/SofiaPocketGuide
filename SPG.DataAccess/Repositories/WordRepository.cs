@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SPG.DataService.Interfaces
+namespace SPG.DataAccess.Repositories
 {
-    public class IChatService
+    public class WordRepository
     {
     }
 }
