@@ -198,6 +198,14 @@
       <Project>{5a166f45-2ad3-4579-978f-3e884a0bb572}</Project>
       <Name>SPG.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SPG.DataService\SPG.DataService.csproj">
+      <Project>{006b781b-09bb-48b8-ae5a-ede53abb3c37}</Project>
+      <Name>SPG.DataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPG.DataViewModels\SPG.DataViewModels.csproj">
+      <Project>{eb5951ef-c21c-4f0f-8905-09bc8d7c6952}</Project>
+      <Name>SPG.DataViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

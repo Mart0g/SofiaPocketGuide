@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPG.DataService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,12 @@ namespace SPG.Controllers
 {
     public class HomeController : Controller
     {
+        //IDataService dataService;
+        public HomeController ():base()
+        {
+            //this.dataService = dataService;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Title = "Home";

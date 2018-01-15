@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SPG.DataService
 {
-    class IDataService
+    public class IDataService : IDisposable
     {
+        public void Dispose ( )
+        {
+            Dispose();
+        }
     }
 }
