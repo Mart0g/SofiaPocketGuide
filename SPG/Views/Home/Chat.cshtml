@@ -9,7 +9,8 @@
 
 @{ string message = Request.Form["message"]; }
 @{
-    if (@ViewBag.Question) {
+    if (@ViewBag.Question != null)
+    {
         <div class="container-chat darker">
             <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
             <p>@message</p>

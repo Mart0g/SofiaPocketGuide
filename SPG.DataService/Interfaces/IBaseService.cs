@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SPG.DataService
+namespace SPG.DataService.Interfaces
 {
-    public class DataService : IDataService
+    public interface IBaseService 
     {
+        
     }
 }

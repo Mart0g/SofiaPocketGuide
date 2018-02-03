@@ -10,7 +10,7 @@ namespace SPG.DataAccess
 {
     public class DataContext: DbContext
     {
-        public DataContext ( ): base()
+        public DataContext (): base("name=DataContext")
         {
 
         }

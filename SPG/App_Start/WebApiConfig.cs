@@ -1,4 +1,7 @@
-﻿using SPG.DataService;
+﻿using SPG.DataAccess;
+using SPG.DataService;
+using SPG.DataService.Interfaces;
+using SPG.DataService.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +23,8 @@ namespace SPG
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            //config.Services.Add(typeof(IDataService) , new DataService.DataService());
+            
+            config.Services.Add(typeof(IChatService) , new ChatService());
         }
     }
 }

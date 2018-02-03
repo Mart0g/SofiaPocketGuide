@@ -8,6 +8,8 @@ namespace SPG.Controllers
 {
     public class MessagesController : Controller
     {
+        
+
         public ActionResult Message(String message)
         {
             ViewBag.Question = message;
