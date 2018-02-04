@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Mvc;
+using Unity;
+using Unity.Lifetime;
 
 namespace SPG
 {
@@ -23,8 +26,10 @@ namespace SPG
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            
-            config.Services.Add(typeof(IChatService) , new ChatService());
+
+            var container = new UnityContainer();
+            container.RegisterType<IChatService, ChatService>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityResolver(container);
         }
     }
 }
