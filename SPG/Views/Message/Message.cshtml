@@ -1,7 +1,7 @@
 ﻿@Styles.Render("~/Content/Site.css")
 @Styles.Render("~/Content/Message.css")
 
-@model SPG.DataViewModels.ViewModels.MessageDTO
+@model SPG.DataViewModels.ViewModels.HistoryDTO
 
 <div class="container-chat">
     <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
@@ -9,25 +9,29 @@
     <span class="time-right">@DateTime.Now</span>
 </div>
 
-@{ string message = Request.Form["message"]; }
-@{
-    if (@ViewBag.Question != null)
+<div>
+    @foreach (var item in Model.History)
     {
         <div class="container-chat darker">
             <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
-            <p>@message</p>
+            <p>@Html.DisplayFor(modelItem => item.Message)</p>
             <span class="time-left">@DateTime.Now</span>
         </div>
+
+        <div class="container-chat">
+            <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
+            <p>Какво ще кажеш за този ресторант?</p>
+            <span class="time-right">@DateTime.Now</span>
+        </div>
     }
-}
+</div>
 
-
-@using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
+@using (Html.BeginForm("ShowMessage", "Message", FormMethod.Post))
 {
     <div class="container">
         <div class="col-md-6">
-            @Html.TextAreaFor(model => model.Message, new { @class = "container-chat lighter form-control" })
-            @Html.ValidationMessageFor(model => model.Message)
+            @Html.TextAreaFor(model => model.Current.Message, new { @class = "container-chat lighter form-control" })
+            @Html.ValidationMessageFor(model => model.Current.Message)
         </div>
         <div class="col-md-6">
             <center>
