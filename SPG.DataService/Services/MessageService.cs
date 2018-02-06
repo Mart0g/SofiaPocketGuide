@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SPG.DataService.Services
 {
-    public class ChatService : BaseService, IChatService
+    public class MessageService : BaseService, IMessageService
     {
-        public ChatService(DataAccessService dataAccessService) : base(dataAccessService)
+        public MessageService(DataAccessService dataAccessService) : base(dataAccessService)
         {
 
         }

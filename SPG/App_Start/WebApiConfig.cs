@@ -28,7 +28,7 @@ namespace SPG
             );
 
             var container = new UnityContainer();
-            container.RegisterType<IChatService, ChatService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IMessageService, MessageService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }

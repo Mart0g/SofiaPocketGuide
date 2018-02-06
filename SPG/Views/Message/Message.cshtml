@@ -21,17 +21,19 @@
     }
 }
 
-<div class="container">
-    @using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
-    {
+
+@using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
+{
+    <div class="container">
         <div class="col-md-6">
             @Html.TextAreaFor(model => model.Message, new { @class = "container-chat lighter form-control" })
             @Html.ValidationMessageFor(model => model.Message)
         </div>
         <div class="col-md-6">
             <center>
-                <button class="btn btn-primary btn-large" type="submit">Изпрати >></button>
+                <button class="send btn btn-primary btn-large" type="submit">Изпрати >></button>
             </center>
         </div>
-    }
-</div>
+    </div>
+}
+

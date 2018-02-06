@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SPG.DataService.Interfaces
 {
-    public interface IChatService
+    public interface IMessageService
     {
     }
 }

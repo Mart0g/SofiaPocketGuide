@@ -10,14 +10,14 @@ namespace SPG.Controllers
 {
     public class MessageController : Controller
     {
-        private readonly ChatService chatService;
+        private readonly MessageService chatService;
 
         public MessageController()
         {
-            this.chatService = new ChatService(new DataAccess.DataAccessService());
+            this.chatService = new MessageService(new DataAccess.DataAccessService());
         }
 
-        public MessageController(ChatService chatService)
+        public MessageController(MessageService chatService)
         {
             this.chatService = chatService;
         }   
