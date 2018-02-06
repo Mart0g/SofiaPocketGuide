@@ -1,4 +1,5 @@
 ﻿using SPG.DataService.Services;
+using SPG.DataViewModels.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,20 @@ namespace SPG.Controllers
             this.chatService = chatService;
         }   
 
-        public ActionResult Message(String message)
+        public ActionResult Message()
         {
-            ViewBag.Question = message;
+            return View();
+        }
 
-            return View(message);
+        [HttpPost]
+        public ActionResult SendMessage(MessageDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODO: SubscribeUser(model.Email);
+            }
+
+            return View("Message", model);
         }
 	}
 }

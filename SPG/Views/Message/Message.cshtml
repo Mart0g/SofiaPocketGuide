@@ -1,5 +1,7 @@
 ﻿@Styles.Render("~/Content/Site.css")
-@Styles.Render("~/Content/Chat.css")
+@Styles.Render("~/Content/Message.css")
+
+@model SPG.DataViewModels.ViewModels.MessageDTO
 
 <div class="container-chat">
     <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
@@ -20,13 +22,16 @@
 }
 
 <div class="container">
-    <div class="col-md-6">
-        <textarea id="message" rows="3" class="container-chat lighter form-control"></textarea>
-    </div>
-    <div class="col-md-6">
-        <center>
-            <p class="send">@Html.ActionLink("Изпрати >>", "Message", "Message", new { message="hello" }, new { @class = "btn btn-primary btn-large" })</p>
-        </center>
-    </div>
+    @using (Html.BeginForm("SendMessage", "Message", FormMethod.Post))
+    {
+        <div class="col-md-6">
+            @Html.TextAreaFor(model => model.Message, new { @class = "container-chat lighter form-control" })
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+        <div class="col-md-6">
+            <center>
+                <button class="btn btn-primary btn-large" type="submit">Изпрати >></button>
+            </center>
+        </div>
+    }
 </div>
-
