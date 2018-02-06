@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="DataAccessService.cs" />
+    <Compile Include="DataContextInitializer.cs" />
     <Compile Include="Entities\LexicalCategoryEntity.cs" />
     <Compile Include="Entities\MessageEntity.cs" />
     <Compile Include="Entities\NeedCategoryEntity.cs" />

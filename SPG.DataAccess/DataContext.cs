@@ -10,7 +10,7 @@ namespace SPG.DataAccess
 {
     public class DataContext: DbContext
     {
-        public DataContext (): base("name=DataContext")
+        public DataContext (): base("name=SPG.DataAccess")
         {
 
         }
@@ -36,5 +36,7 @@ namespace SPG.DataAccess
             modelBuilder.Entity<PlaceCategoryEntity>().ToTable("PlaceCategory");
             modelBuilder.Entity<SubCategoryEntity>().ToTable("SubCategory");
         }
+
+        
     }
 }
