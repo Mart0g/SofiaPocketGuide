@@ -17,25 +17,21 @@ namespace SPG.DataAccess
         {
             DataContext context = new DataContext();
             Context = context;
-            LexicalCategoryRepository = new LexicalCategoryRepository(context);
             MessageRepository = new MessageRepository(context);
-            NeedCategoryRepository = new NeedCategoryRepository(context);
-            PlaceCategoryRepository = new PlaceCategoryRepository(context);
-            PlaceRepository = new PlaceRepository(context);
-            RootRepository = new RootRepository(context);
-            SubCategoryRepository = new SubCategoryRepository(context);
+            NeedRepository = new NeedRepository(context);
+            TagRepository = new TagRepository(context);
+            VenueRepository = new VenueRepository(context);
+            UserRepository = new UserRepository(context);
             WordRepository = new WordRepository(context);
         }
 
         public DataContext Context { get; set; }
-        public ILexicalCategoryRepository LexicalCategoryRepository { get; set; }
         public IMessageRepository MessageRepository { get; set; }
-        public INeedCategoryRepository NeedCategoryRepository { get; set; }
-        public IPlaceCategoryRepository PlaceCategoryRepository { get; set; }
-        public IPlaceRepository PlaceRepository { get; set; }
-        public IRootRepository RootRepository { get; set; }
-        public ISubCategoryRepository SubCategoryRepository { get; set; }
+        public INeedRepository NeedRepository { get; set; }
+        public ITagRepository TagRepository { get; set; }
+        public IVenueRepository VenueRepository { get; set; }
         public IWordRepository WordRepository { get; set; }
+        public IUserRepository UserRepository { get; set; }
 
         public void Commit()
         {

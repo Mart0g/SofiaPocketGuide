@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace SPG.DataAccess.Entities
 {
-    public class PlaceEntity
+    public class VenueEntity
     {
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Address { get; set; }
-        [Required]
-        public PlaceCategoryEntity Category { get; set; }
-        public SubCategoryEntity SubCategory { get; set; }
+
+        public virtual List<TagEntity> Tags { get; set; }
     }
 }

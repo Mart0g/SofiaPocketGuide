@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace SPG.DataAccess.Entities
 {
-    public class RootEntity
+    public class NeedEntity
     {
         public int Id { get; set; }
-        public string Root { get; set; }
-        public List<string> Preffixes { get; set; }
-        public List<string> Suffixess { get; set; }
+        public int Value { get; set; }
     }
 }

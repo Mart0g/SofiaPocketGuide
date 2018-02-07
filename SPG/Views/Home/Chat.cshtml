@@ -1,0 +1,32 @@
+﻿@Styles.Render("~/Content/Site.css")
+@Styles.Render("~/Content/Chat.css")
+
+<div class="container-chat">
+    <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
+    <p>Здравей! С какво мога да помогна днес?</p>
+    <span class="time-right">@DateTime.Now</span>
+</div>
+
+@{ string message = Request.Form["message"]; }
+@{
+    if (@ViewBag.Question != null)
+    {
+        <div class="container-chat darker">
+            <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
+            <p>@message</p>
+            <span class="time-left">@DateTime.Now</span>
+        </div>
+    }
+}
+
+<div class="container">
+    <div class="col-md-6">
+        <textarea id="message" rows="3" class="container-chat lighter form-control"></textarea>
+    </div>
+    <div class="col-md-6">
+        <center>
+            <p class="send">@Html.ActionLink("Изпрати >>", "Message", "Message", new { message="hello" }, new { @class = "btn btn-primary btn-large" })</p>
+        </center>
+    </div>
+</div>
+

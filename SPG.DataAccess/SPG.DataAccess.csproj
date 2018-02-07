@@ -52,23 +52,19 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataAccessService.cs" />
     <Compile Include="DataContextInitializer.cs" />
-    <Compile Include="Entities\LexicalCategoryEntity.cs" />
     <Compile Include="Entities\MessageEntity.cs" />
-    <Compile Include="Entities\NeedCategoryEntity.cs" />
-    <Compile Include="Entities\PlaceCategoryEntity.cs" />
-    <Compile Include="Entities\PlaceEntity.cs" />
-    <Compile Include="Entities\RootEntity.cs" />
-    <Compile Include="Entities\SubCategoryEntity.cs" />
+    <Compile Include="Entities\NeedEntity.cs" />
+    <Compile Include="Entities\TagEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="Entities\VenueEntity.cs" />
     <Compile Include="Entities\WordEntity.cs" />
     <Compile Include="IDataAccessService.cs" />
-    <Compile Include="Interfaces\ILexicalCategoryRepository.cs" />
     <Compile Include="Interfaces\IBaseRepository.cs" />
     <Compile Include="Interfaces\IMessageRepository.cs" />
-    <Compile Include="Interfaces\INeedCategoryRepository.cs" />
-    <Compile Include="Interfaces\IPlaceCategoryRepository.cs" />
-    <Compile Include="Interfaces\IPlaceRepository.cs" />
-    <Compile Include="Interfaces\IRootRepository.cs" />
-    <Compile Include="Interfaces\ISubCategoryRepository.cs" />
+    <Compile Include="Interfaces\INeedRepository.cs" />
+    <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\IVenueRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Interfaces\IWordRepository.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.Designer.cs">
@@ -78,15 +74,17 @@
     <Compile Include="Migrations\201801131635418_Added_Required_Fields.Designer.cs">
       <DependentUpon>201801131635418_Added_Required_Fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802072118446_Refactor_Database.cs" />
+    <Compile Include="Migrations\201802072118446_Refactor_Database.Designer.cs">
+      <DependentUpon>201802072118446_Refactor_Database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\LexicalCategoryRepository.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
-    <Compile Include="Repositories\NeedCategoryRepository.cs" />
-    <Compile Include="Repositories\PlaceCategoryRepository.cs" />
-    <Compile Include="Repositories\PlaceRepository.cs" />
-    <Compile Include="Repositories\RootRepository.cs" />
-    <Compile Include="Repositories\SubCategoryRepository.cs" />
+    <Compile Include="Repositories\NeedRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\VenueRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\WordRepository.cs" />
     <Compile Include="Unit\IUnitOfWork.cs" />
   </ItemGroup>
@@ -96,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801131635418_Added_Required_Fields.resx">
       <DependentUpon>201801131635418_Added_Required_Fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802072118446_Refactor_Database.resx">
+      <DependentUpon>201802072118446_Refactor_Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

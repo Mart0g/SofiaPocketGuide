@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SPG.DataAccess.Interfaces
 {
-    public interface ISubCategoryRepository: IDisposable, IBaseRepository<SubCategoryEntity>
+    public interface INeedRepository: IDisposable, IBaseRepository<NeedEntity>
     {
     }
 }

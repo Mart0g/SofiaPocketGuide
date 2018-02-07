@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace SPG.DataAccess.Repositories
 {
-    public class PlaceRepository : IPlaceRepository
+    public class VenueRepository : IVenueRepository
     {
-        public PlaceRepository(DataContext context)
+        public VenueRepository(DataContext context)
         {
             Context = context;
         }
 
         public DataContext Context { get; set; }
 
-        public void Add(PlaceEntity entity)
+        public void Add(VenueEntity entity)
         {
-            Context.Place.Add(entity);
+            Context.Venue.Add(entity);
         }
 
         public void Dispose()
@@ -27,24 +27,24 @@ namespace SPG.DataAccess.Repositories
             Context.Dispose();
         }
 
-        public PlaceEntity Get(int id)
+        public VenueEntity Get(int id)
         {
-            return Context.Place.Where(p => p.Id == id).FirstOrDefault();
+            return Context.Venue.Where(p => p.Id == id).FirstOrDefault();
         }
 
-        public IEnumerable<PlaceEntity> GetAll()
+        public IEnumerable<VenueEntity> GetAll()
         {
-            return Context.Place;
+            return Context.Venue;
         }
 
-        public void Remove(PlaceEntity entity)
+        public void Remove(VenueEntity entity)
         {
-            Context.Place.Remove(entity);
+            Context.Venue.Remove(entity);
         }
 
-        public void Update(PlaceEntity entity)
+        public void Update(VenueEntity entity)
         {
-            PlaceEntity place = Get(entity.Id);
+            VenueEntity place = Get(entity.Id);
             place.Name = entity.Name;
             Context.SaveChanges();
         }

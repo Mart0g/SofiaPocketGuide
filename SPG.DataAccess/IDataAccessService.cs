@@ -10,13 +10,11 @@ namespace SPG.DataAccess
 {
     public interface IDataAccessService
     {
-        ILexicalCategoryRepository LexicalCategoryRepository { get; set; }
         IMessageRepository MessageRepository { get; set; }
-        INeedCategoryRepository NeedCategoryRepository { get; set; }
-        IPlaceCategoryRepository PlaceCategoryRepository { get; set; }
-        IPlaceRepository PlaceRepository { get; set; }
-        IRootRepository RootRepository { get; set; }
-        ISubCategoryRepository SubCategoryRepository { get; set; }
+        INeedRepository NeedRepository { get; set; }
+        ITagRepository TagRepository { get; set; }
+        IVenueRepository VenueRepository { get; set; }
+        IUserRepository UserRepository { get; set; }
         IWordRepository WordRepository { get; set; }
 
     }
