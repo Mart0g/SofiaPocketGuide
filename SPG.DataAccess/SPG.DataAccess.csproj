@@ -78,6 +78,18 @@
     <Compile Include="Migrations\201802072118446_Refactor_Database.Designer.cs">
       <DependentUpon>201802072118446_Refactor_Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802072200364_Added_VenueCode.cs" />
+    <Compile Include="Migrations\201802072200364_Added_VenueCode.Designer.cs">
+      <DependentUpon>201802072200364_Added_VenueCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802072216504_Tag_Value_Stringified.cs" />
+    <Compile Include="Migrations\201802072216504_Tag_Value_Stringified.Designer.cs">
+      <DependentUpon>201802072216504_Tag_Value_Stringified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802072341536_User_Venue_Relation_Created.cs" />
+    <Compile Include="Migrations\201802072341536_User_Venue_Relation_Created.Designer.cs">
+      <DependentUpon>201802072341536_User_Venue_Relation_Created.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
@@ -98,6 +110,15 @@
     <EmbeddedResource Include="Migrations\201802072118446_Refactor_Database.resx">
       <DependentUpon>201802072118446_Refactor_Database.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802072200364_Added_VenueCode.resx">
+      <DependentUpon>201802072200364_Added_VenueCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802072216504_Tag_Value_Stringified.resx">
+      <DependentUpon>201802072216504_Tag_Value_Stringified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802072341536_User_Venue_Relation_Created.resx">
+      <DependentUpon>201802072341536_User_Venue_Relation_Created.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -105,7 +126,15 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataSets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPG.DataViewModels\SPG.DataViewModels.csproj">
+      <Project>{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}</Project>
+      <Name>SPG.DataViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

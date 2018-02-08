@@ -9,7 +9,7 @@ namespace SPG.DataAccess.Entities
     public class TagEntity
     {
         public int Id { get; set; }
-        public int Value { get; set; }
+        public string Value { get; set; }
 
         public virtual List<VenueEntity> Venues { get; set; }
     }

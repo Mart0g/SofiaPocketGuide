@@ -13,5 +13,7 @@ namespace SPG.DataAccess.Entities
         [Required]
         public int UserId { get; set; }
         public string UserName { get; set; }
+
+        public virtual List<VenueEntity> Venues { get; set; }
     }
 }
