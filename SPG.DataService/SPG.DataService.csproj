@@ -51,6 +51,10 @@
       <Project>{5A166F45-2AD3-4579-978F-3E884A0BB572}</Project>
       <Name>SPG.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Word2Vec.Net\Word2Vec.Net.csproj">
+      <Project>{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}</Project>
+      <Name>Word2Vec.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

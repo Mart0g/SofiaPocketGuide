@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Word2Vec.Net;
 
 namespace SPG.Controllers
 {
@@ -34,7 +35,9 @@ namespace SPG.Controllers
         [HttpPost]
         public ActionResult ShowMessage(HistoryDTO model)
         {
+            BestWord[] words = this.messageService.GetConnectedWords(model.Current.Message);
             history.History.Add(model.Current);
+            
             history.Current = new MessageDTO();
             ModelState.Clear();
             return View("Message", history);

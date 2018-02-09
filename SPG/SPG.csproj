@@ -236,6 +236,10 @@
       <Project>{eb5951ef-c21c-4f0f-8905-09bc8d7c6952}</Project>
       <Name>SPG.DataViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Word2Vec.Net\Word2Vec.Net.csproj">
+      <Project>{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}</Project>
+      <Name>Word2Vec.Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
