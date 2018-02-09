@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Word2Vec.Net;
 
 namespace SPG.DataAccess
 {
@@ -17,6 +18,8 @@ namespace SPG.DataAccess
             base.InitializeDatabase(context);
             SeedVenueTag(context);
             SeedVenueUser(context);
+            CreateWord2VecModel();
+            GenerateSourceFile();
         }
         public void SeedVenueTag(DataContext context)
         {
@@ -110,6 +113,58 @@ namespace SPG.DataAccess
                         context.SaveChanges();
                     }
                 }
+            }
+        }
+        public void CreateWord2VecModel()
+        {
+            string trainFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\source-word-2-vec-file.txt";
+            string outputFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\vector.txt";
+            if (!File.Exists(outputFile) && File.Exists(trainFile))
+            {
+                var word2Vec = Word2VecBuilder.Create()
+                .WithTrainFile(trainFile)// Use text data to train the model;
+                .WithOutputFile(outputFile)//Use to save the resulting word vectors / word clusters
+                .WithSize(200)//Set size of word vectors; default is 100
+                .Build();
+
+                word2Vec.TrainModel();
+            }
+        }
+        public void GenerateSourceFile()
+        {
+
+            string tagsPath = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\tag-venue-dataset.txt";
+            string tipsPath = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\tip-venue-dataset.txt";
+            string targetPath = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\source-word-2-vec-file.txt";
+
+            if (!File.Exists(targetPath)&& File.Exists(tagsPath)&& File.Exists(tipsPath))
+            {
+                var tags = from str in File.ReadAllLines(tagsPath)
+                           where !String.IsNullOrEmpty(str)
+                           let data = str.Split(new string[] { ".." }, StringSplitOptions.RemoveEmptyEntries)
+                           where data.Length == 2 && !String.IsNullOrEmpty(data[0]) && !String.IsNullOrEmpty(data[1])
+                           select new TagVenueDSM
+                           {
+                               VenueId = int.Parse(data[0]),
+                               Tags = data[1]
+                           };
+                var tips = from str in File.ReadAllLines(tipsPath)
+                           where !String.IsNullOrEmpty(str)
+                           let data = str.Split(new string[] { ".." }, StringSplitOptions.RemoveEmptyEntries)
+                           where data.Length == 3 && !String.IsNullOrEmpty(data[0]) && !String.IsNullOrEmpty(data[1]) && !String.IsNullOrEmpty(data[2])
+                           select new TipVenueDSM
+                           {
+                               UserId = int.Parse(data[0]),
+                               VenueId = int.Parse(data[1]),
+                               Tip = data[2]
+                           };
+                List<string> lines = new List<string>();
+                foreach (TipVenueDSM tip in tips)
+                {
+                    string line = tags.Where(t => t.VenueId == tip.VenueId).FirstOrDefault()?.Tags + "  " + tip.Tip;
+                    lines.Add(line);
+                }
+                File.WriteAllLines(targetPath, lines.ToArray());
             }
         }
     }

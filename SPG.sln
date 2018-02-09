@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG", "SPG\SPG.csproj", "{E6FC1839-BF17-481B-BD57-3FBCC4855E3B}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.DataService", "SPG.DataService\SPG.DataService.csproj", "{006B781B-09BB-48B8-AE5A-EDE53ABB3C37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.DataViewModels", "SPG.DataViewModels\SPG.DataViewModels.csproj", "{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word2Vec.Net", "Word2Vec.Net\Word2Vec.Net.csproj", "{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFCA2DC-137B-4EEE-A779-0194BDFEBE1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {415FEAF5-CB64-4730-B723-616D09A14919}
 	EndGlobalSection
 EndGlobal

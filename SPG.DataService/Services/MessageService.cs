@@ -14,5 +14,13 @@ namespace SPG.DataService.Services
         {
 
         }
+
+        void SetWord2VecVocabulary()
+        {
+            
+            string trainFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\user-venue-dataset.txt";
+            
+        }
+
     }
 }

@@ -127,13 +127,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataSets\" />
+    <Folder Include="Word2VecFiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SPG.DataViewModels\SPG.DataViewModels.csproj">
       <Project>{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}</Project>
       <Name>SPG.DataViewModels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Word2Vec.Net\Word2Vec.Net.csproj">
+      <Project>{fefca2dc-137b-4eee-a779-0194bdfebe1f}</Project>
+      <Name>Word2Vec.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSets\tag-venue-dataset.txt" />
+    <Content Include="DataSets\user-venue-dataset.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
