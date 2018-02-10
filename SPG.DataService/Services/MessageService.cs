@@ -1,39 +1,81 @@
 ﻿using SPG.DataAccess;
+using SPG.DataAccess.Entities;
 using SPG.DataService.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Word2vec.Tools;
 using Word2Vec.Net;
 
 namespace SPG.DataService.Services
 {
     public class MessageService : BaseService, IMessageService
     {
-        private readonly Distance distanceFinder;
+        private readonly Vocabulary vocabulary;
 
         public MessageService(DataAccessService dataAccessService) : base(dataAccessService)
         {
-            string outputFile= @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\vector.txt";
-            distanceFinder = new Distance(outputFile);
+            string outputFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\vector.txt";
+            vocabulary = new Word2VecTextReader().Read(outputFile);
         }
 
-        public BestWord[] GetConnectedWords(string word)
+        public string[] GetConnectedWords(string word)
         {
-            foreach (var item in distanceFinder.Search(word))
+            DistanceTo[] words = vocabulary.Distance(word, 20);
+            return words.Select(w => w.Representation.WordOrNull).ToArray();
+        }
+
+        public string GetResponse(string message)
+        {
+            string[] words = message.Split(' ', ',', '.', '\'', '?', '!', '/', '\\', ')', '(', ';', ':', '-', '_', '@', '#', '"', '+');
+            string[] tags = GetTagsFromDataBase(words);
+            if (!tags.Any())
+                tags = GetTagsFromWord2VecLogic(words);
+            if (!tags.Any())
+                return $"I don't understand your question. Can you be more specific? :)";
+            List<VenueEntity> intersection = new List<VenueEntity>();
+            foreach (string tag in tags)
             {
-                string m = item.Word;
+                List<VenueEntity> venues = DataAccessService.VenueRepository.GetVenuesWithUsers(tag);
+                if (intersection.Count == 0)
+                {
+                    intersection = venues;
+                }
+                intersection = venues.Intersect(intersection).ToList();
             }
-            return distanceFinder.Search(word);
+            if (intersection.Count != 0)
+            {
+                int maxValue = intersection.Max(v => v.Users.Count);
+                VenueEntity final = intersection.Where(v => v.Users.Count == maxValue).FirstOrDefault();
+                return $"We recommend this venue: {final.VenueCode} with {final.Users.Count} total visits!";
+            }
+            return $"I don't understand your question. Can you be more specific? :)";
         }
 
-        void SetWord2VecVocabulary()
+
+        private string[] GetTagsFromDataBase(string[] words)
         {
-            
-            string trainFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\user-venue-dataset.txt";
-            
+            List<string> foundTags = new List<string>();
+            foreach (string word in words)
+            {
+                if (this.DataAccessService.TagRepository.CheckWordInTags(word))
+                {
+                    foundTags.Add(word);
+                }
+            }
+            return foundTags.ToArray();
         }
 
+        private string[] GetTagsFromWord2VecLogic(string[] words)
+        {
+            List<string> references = new List<string>();
+            foreach (string word in words)
+            {
+                references.AddRange(GetConnectedWords(word));
+            }
+            return GetTagsFromDataBase(references.ToArray());
+        }
     }
 }

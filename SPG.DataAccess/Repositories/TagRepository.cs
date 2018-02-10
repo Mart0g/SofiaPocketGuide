@@ -22,6 +22,11 @@ namespace SPG.DataAccess.Repositories
             Context.Tag.Add(entity);
         }
 
+        public bool CheckWordInTags(string word)
+        {
+            return !String.IsNullOrEmpty(Context.Tag.Where(t => t.Value.ToLower() == word.ToLower() || t.Value.ToLower().Contains(word.ToLower())).FirstOrDefault()?.Value);
+        }
+
         public void Dispose()
         {
             Context.Dispose();

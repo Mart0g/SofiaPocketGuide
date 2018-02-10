@@ -2,6 +2,7 @@
 using SPG.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,14 @@ namespace SPG.DataAccess.Repositories
         public IEnumerable<VenueEntity> GetAll()
         {
             return Context.Venue;
+        }
+
+        public List<VenueEntity> GetVenuesWithUsers(string tag)
+        {
+            return Context.Venue.Include("Tags").Include("Users").
+                           Where(v => v.Tags.
+                                            Where(t => t.Value.ToLower() == tag.ToLower() || t.Value.Contains(tag)).
+                                            FirstOrDefault() != null).ToList();
         }
 
         public void Remove(VenueEntity entity)

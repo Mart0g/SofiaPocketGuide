@@ -9,5 +9,6 @@ namespace SPG.DataAccess.Interfaces
 {
     public interface ITagRepository: IDisposable, IBaseRepository<TagEntity>
     {
+        bool CheckWordInTags(string word);
     }
 }

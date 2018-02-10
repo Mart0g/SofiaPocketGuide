@@ -9,5 +9,6 @@ namespace SPG.DataAccess.Interfaces
 {
     public interface IVenueRepository: IDisposable, IBaseRepository<VenueEntity>
     {
+        List<VenueEntity> GetVenuesWithUsers(string tag);
     }
 }

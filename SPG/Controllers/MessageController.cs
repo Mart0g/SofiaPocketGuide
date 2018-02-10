@@ -1,17 +1,19 @@
-﻿using SPG.DataService.Services;
+﻿using SPG.DataService.Interfaces;
+using SPG.DataService.Services;
 using SPG.DataViewModels.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Word2vec.Tools;
 using Word2Vec.Net;
 
 namespace SPG.Controllers
 {
     public class MessageController : Controller
     {
-        private readonly MessageService messageService;
+        private readonly IMessageService messageService;
         List<MessageDTO> messages = new List<MessageDTO>();
         private static HistoryDTO history = new HistoryDTO();
         public MessageController()
@@ -22,7 +24,7 @@ namespace SPG.Controllers
         public MessageController(MessageService messageService)
         {
             this.messageService = messageService;
-        }   
+        }
 
         public ActionResult Message()
         {
@@ -35,12 +37,12 @@ namespace SPG.Controllers
         [HttpPost]
         public ActionResult ShowMessage(HistoryDTO model)
         {
-            BestWord[] words = this.messageService.GetConnectedWords(model.Current.Message);
+            string response = this.messageService.GetResponse(model.Current.Message);
             history.History.Add(model.Current);
-            
+            history.History.Add(new MessageDTO() { UserName = "SPG", Message = response });
             history.Current = new MessageDTO();
             ModelState.Clear();
             return View("Message", history);
         }
-	}
+    }
 }
