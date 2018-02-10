@@ -26,8 +26,9 @@ namespace SPG.DataAccess.Repositories
         {
             return Context.Tag.Where(
                 t => (t.Value.ToLower() == word.ToLower()
-                || t.Value.ToLower().Contains(" " + word.ToLower())
-                || t.Value.ToLower().Contains(word.ToLower() + " "))).Select(t => t.Value).ToList();
+                || t.Value.ToLower().EndsWith(" " + word.ToLower())
+                || t.Value.ToLower().StartsWith(word.ToLower() + " ")
+                || t.Value.ToLower().Contains(" " + word.ToLower() + " "))).Select(t => t.Value).ToList();
         }
         public List<string> CheckWordWithMorphemes(string word)
         {
