@@ -20,8 +20,8 @@ namespace SPG.DataAccess
             SeedVenueUser(context);
             SeedPrefixes(context);
             SeedSuffixes(context);
-            CreateWord2VecModel();
             GenerateSourceFile();
+            CreateWord2VecModel();
         }
         public void SeedVenueTag(DataContext context)
         {
@@ -42,7 +42,7 @@ namespace SPG.DataAccess
                     VenueEntity venue = new VenueEntity { VenueCode = item.VenueId };
                     context.Venue.Add(venue);
                     context.SaveChanges();
-                    string[] tags = item.Tags.Split(',');
+                    string[] tags = item.Tags.Split(',', '\t');
                     foreach (var tagItem in tags)
                     {
                         var inBase = context.Tag.Where(t => t.Value == tagItem).FirstOrDefault();
@@ -161,7 +161,7 @@ namespace SPG.DataAccess
                            {
                                UserId = int.Parse(data[0]),
                                VenueId = int.Parse(data[1]),
-                               Tip = data[2]
+                               Tip = data[2].Replace("\t", " ")
                            };
                 List<string> lines = new List<string>();
                 foreach (TipVenueDSM tip in tips)
@@ -185,7 +185,7 @@ namespace SPG.DataAccess
                 {
                     PrefixEntity prefix = new PrefixEntity { Value = item };
                     context.Prefix.Add(prefix);
-                    context.SaveChanges();                   
+                    context.SaveChanges();
                 }
             }
         }

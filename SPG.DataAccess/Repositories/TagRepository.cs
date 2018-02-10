@@ -25,7 +25,9 @@ namespace SPG.DataAccess.Repositories
         public List<string> CheckWordInTags(string word)
         {
             return Context.Tag.Where(
-                t => (t.Value.ToLower() == word.ToLower())).Select(t => t.Value).ToList();
+                t => (t.Value.ToLower() == word.ToLower()
+                || t.Value.ToLower().Contains(" " + word.ToLower())
+                || t.Value.ToLower().Contains(word.ToLower() + " "))).Select(t => t.Value).ToList();
         }
         public List<string> CheckWordWithMorphemes(string word)
         {

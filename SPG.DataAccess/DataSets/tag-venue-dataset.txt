@@ -21,7 +21,7 @@
 105	..moroccan
 114	..rustic,taavo somer
 115	..bingo,fiesta lights,mexican,tequila
-123	..br guest hospitality,brunch,live jazz music,online reservations @ www.bluewatergrillnyc.com,outdoor seating,private room,raw bar,seafood,sushi,union square,www.brguesthospitality.com
+123	..guest hospitality,brunch,live jazz music,online reservations,outdoor seating,private room,raw bar,seafood,sushi,union square,www.brguesthospitality.com
 133	..bbq,bbq ribs,buffalo wings,delivery,fried chicken joint
 138	..extensive wine list,italian,late night,panini,wine
 140	..restaurant,sandwiches
@@ -876,7 +876,7 @@
 9602..	airport,brooklyn,brooklyn museum,brunch,cheryl's global soul,coffee shop,dog run,gallery,park,soul food,theater
 9611..	coffee,starbucks
 9615..	coffee shop,douchebag,fair trade,organic,stir brew
-9620..	drink,restaurant,steakhouse,steaks
+9620..	something to drink,restaurant,steakhouse,steaks
 9643..	
 9652..	art,classes,clover,coffee,coffee cupping,espresso,guest espresso,latte,merchandise,pastries,rocket espresso machine,synesso,table seating,tea,thiswasadupe
 9664..	byob,calzone,carroll gardens,douchebag,douchebags,gossip girl,italian,outdoor,restaurant
@@ -1199,7 +1199,7 @@
 13212..	coffee,lunch spot,wifi
 13227..	croissants,stumptown
 13231..	brooklyn,deli,duplicate category,fried eggplant,italian stalion,meat,roast beef,sandwiches,subs
-13232..	drink,eat,soup,tacos
+13232..	drinks,eat,soup,tacos
 13233..	cafe,cappuccino,coffee,douchebag,espresso
 13245..	bon appetit mag,chick-fil-a sauce,chicken,fast food,lemonaide,nuggets,nymag,nyu,sandwich,waffle fries
 13248..	fries,hamburgers,milkshakes,turkey burgers
@@ -1243,7 +1243,7 @@
 13605..	
 13607..	beer,coffee,croissant,madeleine,pastry,sake,salad,sandwich,wine
 13611..	korean,restaurant,sushi,teriyaki
-13621..	bar,best granola,brunch,celebrity spotting,dinner,drinks,freeway eyewear,housewares,jacques mag,mariage fr¨¨res tea,original 1963 faema espresso machine,outdoor benches,twee,wool and the gang
+13621..	bar,best granola,brunch,celebrity spotting,dinner,drinks,freeway eyewear,housewares,jacques mag,espresso machine,outdoor benches,twee,wool and the gang
 13624..	bakery,coffee,dessert,espresso,french,quiche,sandwich,zagat
 13629..	curry,japanese,tempura,udon
 13630..	cafe,coffee,movies,pastries,starbucks,wi-fi
@@ -2280,8 +2280,8 @@
 36039..	coffee,tea
 36092..	bakery,cake,cupcakes,tasty treats
 36314..	cheesebuger
-36389..	 gossip girl, playground, socialite,bomboloni,bread,douchebag,pizza,sandwiches
-36421..	
+36389..	gossip girl, playground, socialite,bomboloni,bread,douchebag,pizza,sandwiches
+36421..	everyday food, fastfood, drinks
 36438..	dinner,lunch,business events, business, event, catering
 36462..	asian,chinese,spotted rihanna!!,zagat,zagat-rated
 36580..	kabab
@@ -2889,7 +2889,7 @@
 124493..	pizza
 124918..	pasta,wine
 125612..	brooklyn,cobble hill,court st,court street,douchebags
-125662..	cafe,drink,eat,pizza,pizzaria,pizzeria,resto
+125662..	coffee,cofe,tea,alchohol,milk,shake,milkshake,eat,pizza,pizzaria,pizzeria,resto
 125718..	campus cafetaria,italian,italian food,pizza,tea,wine
 125770..	burgers,coleslaw,fries,hamburgers,milkshakes
 125941..	
@@ -2940,14 +2940,14 @@
 136990..	beignets,belgian fries,burgers,candy,chili dog,coffee,crepes,egg cream,french fries,fries,frozen yogurt,gelato,hot dogs,ice cream,ices,malts,milk shakes,sandwiches,sausage,shakes,soft serve,sundae
 137124..	korean,tapas
 137737..	
-138722..	
+138722..	dance,party,pizza,fastfood,alchohol,college
 139036..	
 139046..	40s,50s,60s,dancing,hamburgers,milkshakes
 139117..	american restaurants,american restaurants|carry out and take out|southwestern restaurants|bars and pubs,bars and pubs,carry out and take out,southwestern restaurants
 139421..	
 139711..	salad
 139866..	
-140226..	drink specials,harlem
+140226..	drink specials,harlem shake,dance,party,shots
 140325..	
 140386..	
 140479..	zagat-rated
@@ -3264,7 +3264,7 @@
 1649796..	
 1654176..	dumplings
 1684997..	
-1719875..	
+1719875..	romanian,mamaliga
 1742184..	
 1760748..	
 1782104..	grilled cheese,sandwiches
@@ -3272,27 +3272,27 @@
 1809239..	donut shop
 1809245..	
 1925765..	
-1930697..	
+1930697..	kebab,turkish,turkish delight,turkish coffee,turkish tea
 1930899..	
 1930905..	
-1932723..	
+1932723..	serbian restaurants,pleskavitsa,plescavitsa,rakiya
 1932979..	
 1932980..	
 1944209..	
 1945122..	neapolitan pizza bar,pizza
-1948043..	
+1948043..	bulgarian food,rakiya,folklore music
 1995366..	
 2000031..	
 2019407..	
-2022669..	
+2022669..	bulgarian food,bulgaria,bulgarian,alchohol, 
 2053266..	
-2067414..	
+2067414..	bulgarian tradition,bulgaria,rakiya,shopska salata,kebab
 2088246..	
 2133943..	
 2154515..	banquet,beer,brunch,dinner specials,dj,happy hour,karaoke,lunch,music,organic,party,russian cuisine,vegetarian,vodka,wine,wine tasting
 2167106..	
 2232344..	
-2302016..	11\/11\/11,fries,happy,mcdonald's,world famous fries
+2302016..	fries,happy,mcdonald's,world famous fries,fastfood
 2358357..	
 2376156..	
 2422200..	brunch,pastry,sandwiches
