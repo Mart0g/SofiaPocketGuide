@@ -126,8 +126,8 @@ namespace SPG.DataAccess
             if (!File.Exists(outputFile) && !File.Exists(vocubFile) && File.Exists(trainFile))
             {
                 var word2Vec = Word2VecBuilder.Create()
-                .WithTrainFile(trainFile)// Use text data to train the model;
-                .WithOutputFile(outputFile)//Use to save the resulting word vectors / word clusters
+                .WithTrainFile(trainFile)
+                .WithOutputFile(outputFile)
                 .WithSize(200)
                 .WithSaveVocubFile(vocubFile)
                 .Build();
@@ -166,7 +166,7 @@ namespace SPG.DataAccess
                 List<string> lines = new List<string>();
                 foreach (TipVenueDSM tip in tips)
                 {
-                    string line = tags.Where(t => t.VenueId == tip.VenueId).FirstOrDefault()?.Tags + "  " + tip.Tip;
+                    string line = tags.Where(t => t.VenueId == tip.VenueId).FirstOrDefault().Tags + "  " + tip.Tip;
                     lines.Add(line);
                 }
                 File.WriteAllLines(targetPath, lines.ToArray());

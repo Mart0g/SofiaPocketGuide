@@ -34,7 +34,7 @@ namespace SPG.DataService.Services
             if (!tags.Any())
                 tags = GetTagsFromWord2VecLogic(words);
             if (!tags.Any())
-                return $"I don't understand your question. Can you be more specific? :)";
+                return "I don't understand your question. Can you be more specific? :)";
             List<VenueEntity> minTags = new List<VenueEntity>();
             foreach (string tag in tags)
             {
@@ -55,9 +55,9 @@ namespace SPG.DataService.Services
                 string recommended = GetRecommendedMeals(final.Tags, words);
                 if (String.IsNullOrWhiteSpace(recommended))
                     recommended = "none";
-                return $"SPG recommends this venue: {final.VenueCode}!\n Tags: {recommended}\n Visits: {final.Users.Count}";
+                return "SPG recommends this venue: " + final.VenueCode + "!\n Tags: " + recommended + "\n Visits: " + final.Users.Count;
             }
-            return $"I don't understand your question. Can you be more specific? :)";
+            return "I don't understand your question. Can you be more specific? :)";
         }
 
         private string GetRecommendedMeals(List<TagEntity> tags, string[] words)
