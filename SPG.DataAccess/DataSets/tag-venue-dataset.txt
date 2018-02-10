@@ -40,7 +40,7 @@
 189	..cake doughnuts,chai,chocolate blackout,coffee,creme brulee,decaf coffee,dog creme,donuts,tres leche,valrhona chocolate
 190	..
 192	..annoying burp,bart,bbq,beer,buck hunter,college,pbr,pool table,slutty theater girls,tlc summer
-199	..breakfast,brunch,cash only,cranky,cursing,don't be an asshole,don't get kicked out,eclectic,food,kenny shopsin,long lines,lunch,no cell phones,no copying someone else's order,no parties larger than four,quirky
+199	..breakfast,brunch,cash only,cranky,cursing,eclectic,food,kenny shopsin,long lines,lunch,no cell phones,no copying someone else's order,no parties larger than four,quirky
 200	..bar,burger,crayons,happy hour,manhattan,restaurant,tribeca
 204	..mexican
 205	..askmen,beer,bravo,fl¨¹gen flaggen!,frat boys,german,gluten free,oktoberfest,outdoor seating,timeoutny,top chef,weihenstephan
@@ -185,13 +185,13 @@
 695	..bar,brunch,burgers,cocktails,cool staff,dinner,dorrian's,drinks,enormous pannini's,enormous wraps,fun,late night,lunch,outdoor seating,parties,preppy,redskins football,sports
 696	..amazing italian food!,babaresco,barolo,joe bastianich,mario batali,wine
 699	..bravo,zagat-rated
-700	..#vday,bakery,bar,bistro,blackbook,blogger hangout,bouillibaise,bread,breakfast,briertown,catering,celebrities,celebrity,coffee,cookbook,cuisine,cupcake,delivery,french,how to make it in america,lunch,mario batali,nymag,oysters,pastries,restaurant,snails,soho,take-out,tartare,trendy,wsj,zagat-rated,zagat_rated
+700	..#vday,bakery,bar,bistro,blackbook,blogger hangout,bouillibaise,bread,breakfast,briertown,catering,celebrities,celebrity,coffee,cookbook,cuisine,cupcake,delivery,french,lunch,mario batali,nymag,oysters,pastries,restaurant,snails,soho,take-out,tartare,trendy,wsj,zagat-rated,zagat_rated
 711	..
 713	.. baseball, new york yankees,micky mantle
 717	..
 718	..burger,daniel boulud,db burger,french,theater district
 721	..bar,bravo,caviar sandwich,gossip girl,huffpost,ifc,oyster bar - grand central,pizza,raw bar,scallop pan roast,strip club,trendy,wsj,wsj lunch box,zagat-rated
-723	..cash only,dessert,don't forget to bring cash... no plastic accepted ,hot people,italian food,lounge,luckymag,outdoor seating,pasta,people,people mag,people magazine,people vip,people watching,sexy people,socialite
+723	..cash only,dessert,only cash,cash,hot people,italian food,lounge,luckymag,outdoor seating,pasta,people,people mag,people magazine,people vip,people watching,sexy people,socialite
 733	..chinese
 740	..abita,bar,bbq,cajun,creole,oysters,raw bar,seafood
 741	..american,brunch,comfort food,fried chicken,good_mark
@@ -226,7 +226,7 @@
 837	..astor place,coffee,food truck,mobile,mudtruck,new york street coffee,ziggys wagon
 840	..best cupcakes,coffee,cupcake,cupcake cafe - hell's kitchen,dessert,just dessert,moriza,tlc summer,trendy,valentine,valentine's day
 841	..bistro,french,garden,outdoor space,restaurant,wine
-845	..cake,cheesecake,cheesecakes,dessert,italian,places to see in nyc
+845	..cake,cheesecake,cheesecakes,dessert,italian,visit,new york
 851	..brunch
 859	..asian fusion,chinese,new york,radio city,restaurant,rockefeller center,times square,zagat-rated
 874	..beer,cheeseburger,dessert,fish,hamburger,oysters,puma,seafood,steak,wall street journal,wine,wsj,wsj lunch box
@@ -629,7 +629,7 @@
 5991..	burgers,juice bar,vegetarian
 5992..	blintzes,borscht,brunch,omlettes,pancakes,pierogies
 6023..	arada,jakarta,japanese,mtv,music,naruto,ninjas,rasengan,star,sushi
-6057..	 and they customize orders like no one else., ranging from country breakfast to nice italian entrees,24 hours,breakfast,daisey's diner is the quintessential definition of what a neighborhood diner should be.  it has an enormous menu,diner
+6057..	custom,orders,country italian,24 hours,breakfast,enormous menu,diner
 6079..	
 6087..	japanese,sushi
 6089..	byob,dragons,late-night food,tacos
@@ -876,7 +876,7 @@
 9602..	airport,brooklyn,brooklyn museum,brunch,cheryl's global soul,coffee shop,dog run,gallery,park,soul food,theater
 9611..	coffee,starbucks
 9615..	coffee shop,douchebag,fair trade,organic,stir brew
-9620..	something to drink,restaurant,steakhouse,steaks
+9620..	restaurant,steakhouse,steaks
 9643..	
 9652..	art,classes,clover,coffee,coffee cupping,espresso,guest espresso,latte,merchandise,pastries,rocket espresso machine,synesso,table seating,tea,thiswasadupe
 9664..	byob,calzone,carroll gardens,douchebag,douchebags,gossip girl,italian,outdoor,restaurant
@@ -967,7 +967,7 @@
 10897..	bbq,korean
 10904..	burgers,jukebox,outdoor seating,sports
 10935..	art galleries,cave,italian,wine
-10947..	burgers,places to see in nyc
+10947..	burgers,visit,new york
 10965..	a-list,bar seating,black tea soft serve ice cream,david chang,dessert,food & wine best new chef,fried chicken,homemade soda,kimchi,large-format,noodles,pork,pork belly,pork buns,prix fixe,ramen,slushies,soft serve ice cream,steamed buns,wheelchair access,zagat-rated
 10966..	2 michelin stars,david chang,michelin star,raw,tasting menu
 10969..	
@@ -1174,7 +1174,7 @@
 13015..	bar\/table games,beer,douchebag,douchebags,sports bar,tv,wings
 13016..	best burgers in nyc,best burgers in nyc, a quest for the best burger,best burgers in nyc, a quest for the best burger,best burger,brunch,food,half bottle,marc,pam,restaurant,socialite,wine,wine list,yummy
 13017..	cafe,coffee,wifi
-13028..	do it yourself,fro yo,frozen yogurt
+13028.. fro yo,frozen yogurt
 13033..	
 13047..	blackbook,mixologists,russian standard vodka,zagat
 13070..	
@@ -1256,7 +1256,7 @@
 13690..	burger,diet,healthy,low calories,protein,smoothies
 13694..	
 13733..	cocktails,empenadas,enchelada,great deals,latin,margarita,mojitos,outside dining,taco
-13740..	brunch,jalapeno margarita,place to be,sangria,tapas,white sangria
+13740..	brunch,jalapeno margarita,sangria,tapas,white sangria
 13745..	bakery,cafe,coffee,croissants,desserts,french,french macarons,macaron,macaroon,macaroons,madeleine,pastries,pastry,patisserie,tea
 13746..	bakery,mexican fusion
 13750..	# # just dessert,# # music box theatre,bakery,bbq,bravo,coffee,cupcake,cupcake connoiseur,cupcakes,dessert,just dessert,music box theatre,over-rated,ski bum,tlc
@@ -1478,7 +1478,7 @@
 16346..	donuts,doughnuts
 16349..	quick tasty sushi
 16350..	topchef
-16357..	alfajor,argentinian,avacodo fries,avocado fries...lobster tempura tacos...this will be my valentine's day treat,hipster,lomito completo,williamsburg
+16357..	alfajor,argentinian,avacodo fries,avocado fries,lobster tempura tacos,hipster,lomito completo,williamsburg
 16361..	beer,coffee,outdoor seating,sandwiches,wifi
 16362..	bravo,socialite,socialities
 16364..	wine
@@ -1656,7 +1656,7 @@
 19782..	nymag,socialite
 19807..	
 19808..	
-19837..	br guest hospitality,do it yourself doughnuts,dry aging room,outdoor dining,private room,raw bar,seafood,steak,table-side caesar,wine list,www.brguesthospitality.com,zagat rated
+19837..	br guest hospitality,doughnuts,dry aging room,outdoor dining,private room,raw bar,seafood,steak,table-side caesar,wine list,www.brguesthospitality.com,zagat rated
 19842..	cosy,fusion cusine,sea food
 19879..	hummus,pita,tea,wine
 19889..	
@@ -1737,7 +1737,7 @@
 21298..	
 21323..	bakery,coffee,lunch,onigiri,pastries
 21324..	24\/7,coffee,expensive,starbucks,tea,unlocked bathrooms,wifi
-21343..	good ambiance,skirt stake is so good
+21343..	good ambiance,skirt stake
 21345..	appetizers,black angus sirloin,great sangria
 21347..	
 21387..	bagel shop,bagels,begals, bakery, coffee,cream cheese,jewish food,lunch,smoked salmon
@@ -1925,7 +1925,7 @@
 25376..	
 25400..	
 25417..	air conditioning,bathroom,booths,calzone,italian ice,park,pizza,pizzeria,upside-down slice,wsj lunch box
-25423..	buddy holly,karaoke,musicals,singing,the singing is great
+25423..	buddy holly,karaoke,musicals,singing,the singing
 25508..	best cupcakes,cupcake,cupcakes
 25510..	coffee
 25517..	bibimbap,huffpost,korean deli,salad bar,sandwiches,soho,super fast service,sushi,udon soup
@@ -1988,7 +1988,7 @@
 26667..	fantastic view,fdr drive,fire place,lobster,romantic,seafood
 26730..	
 26753..	coffee,desserts,diner,dog run,fried chicken,good food,karaoke bar,nice people,play ground,record shop,snacks,sushi,vegan
-26754..	airport,beach,brooklyn museum,brunch,brunch rules,burgers,diner,dog run,douchebag, brooklyn, gossip girl, socialite,douchebags,gallery,hanging out,lake,old-school,pancakes,park,places to see in nyc,theater,tom's restaurant,wjs
+26754..	airport,beach,brooklyn museum,brunch,brunch rules,burgers,diner,dog run,douchebag, brooklyn, gossip girl, socialite,douchebags,gallery,hanging out,lake,old-school,pancakes,park,visit,new york,theater,tom's restaurant,wjs
 26797..	bakery,cafe,coffee,pastries
 26867..	dumplings,noodles
 26921..	agua de jamaica,huitlacoche,mexican hot chocolate,torta,vegetarian burrito
@@ -1998,7 +1998,7 @@
 27033..	bar,beer,burritos,frozen margaritas,margarita,salads,tacos
 27050..	andy cohen,chocolate,coffee,fashionista,gtl,socialite,starbucks
 27078..	casual,date,drinks,fun,new york city,nyc,sushi,times square,trip
-27092..	dinner,filipino,filipino cuisine,grilled pork belly,i,late night,manila clams,sticky rice,thai,thai cuisine
+27092..	dinner,filipino,filipino cuisine,grilled pork bellylate night,manila clams,sticky rice,thai,thai cuisine
 27102..	chain,juice
 27108..	
 27274..	
@@ -2086,7 +2086,7 @@
 29608..	bar,good cocktails,hotel,mix,restaurant
 29615..	best gyro nyc, greek salad, chicken gyro, pork gyro, greek fries
 29635..	
-29636..	social dining,they have deliciousfood, a great buffet during lunch time, a variety of vegetarian dishes as well as a selection of different meats.you can be in and out in less than an hour if you sit for teh buffet! staff is friendly.
+29636..	social dining,they have deliciousfood, a great buffet during lunch time, vegetarian dishes, different meats, friendly.
 29660..	delivery,restaurant,takeout,takeout delivery,thai
 29670..	korean bbq,tofu soups
 29705..	
@@ -2266,7 +2266,7 @@
 35623..	
 35753..	delivery,thai
 35812..	
-35833..	anthony bourdain,best thing i ever ate,featured on diners, drive-ins and dives,food network,guy fieri,made to order,sliders,travel channel
+35833..	anthony bourdain,best thing i ever ate,featured on diners, drive-ins and dives,food network,guy fieri,order,sliders,travel channel
 35862..	art projects,babies,coffee,cookies,salad & sandwiches
 35863..	
 35866..	
@@ -2329,7 +2329,7 @@
 38603..	organic,organic food
 38612..	
 38624..	booze cruise,food specials,frats,pitchers,sorority
-38631..	did this.. had brunch, its a cool place to relax in
+38631..	brunch,relax,music
 38668..	mexican
 38670..	frozen yogurt,pinkberry
 38689..	beer,brooklyn bar restaurant,brunch,cocktail,cocktails,vegetarian friendly,wine,wine bar
@@ -2595,7 +2595,7 @@
 61118..	columbian,restaurant
 61132..	
 61168..	bbq,barbecue, barbeque, beer
-61207..	9 to 5,corporate,corporate office,office
+61207..	corporate,corporate office,office
 61210..	asian cuisine,chinese,gluten free,gluten-free,sushi bar
 61274..	amazing cocktails,beignet,brooklyn,brussel sprouts,choice eats,small plates
 61285..	
@@ -2603,7 +2603,7 @@
 61329..	healthy,salads,soups,wraps
 61354..	falafel,kosher,shish kebab,shwarma
 64674..	burritos,chain,mexican,tex-mex
-64680..	hazlenut coffee is da bomb!
+64680..	hazlenut coffee,bomb
 64714..	crowds,family style,good food,italian,pizza
 64823..	bakery,salads,sandwiches
 64882..	
@@ -2637,7 +2637,7 @@
 69215..	brunch,cocktails,comfort food,mexican,restaurant,wine
 69265..	chinatown,chinese food,dumplings,noodles
 69282..	
-69521..	great reason to head to jersey!
+69521..	jersey,bananas,smothies,classy
 69575..	brunch,free wifi
 69601..	bryant,byrant market,deli,market
 69745..	diner
@@ -2734,7 +2734,7 @@
 81357..	brooklyn
 81383..	burger joint
 81579..	
-81616..	chambers hotel,david chang,delivery,homemade soda,large format,midtown,momofuku,to go
+81616..	chambers hotel,david chang,delivery,homemade soda,large format,midtown,momofuku,to-go
 81695..	breakfast,diner,dinner,lunch,restaurant,snacks
 81766..	 gossip girl, playground, socialite,ambarrukmo plaza,andy cohen,beer,bravo,bread,dessert,douchebag,puma social hot spot,rockefeller,soup,top chef
 81771..	amazing daily specials,fine dining
@@ -2909,7 +2909,7 @@
 128537..	
 128646..	pizza
 129011..	buttitos,chipotle mexican grill,mexican,tacos
-129142..	charlie nuttall,donut shop,dunkin donuts,taco bell,things that shouldn't be!
+129142..	charlie nuttall,donut shop,dunkin donuts,taco bell
 129237..	pizza
 130406..	chocolatesuicide pastry,cupcake,friedoreos,zeppoles
 130469..	
@@ -3017,7 +3017,7 @@
 158279..	asian,chinese,sushi
 158746..	lufthansa eurovision song contest 2011
 158958..	bakery,bread,breakfast,cafe,clean bathrooms,coffee,dinner,free wifi,knitting,lunch,salad,sandwich,soup
-159042..	nymag,nyt,tasting menu with a smore ending, to die for
+159042..	nymag,nyt,tasting menu with a smore ending
 159367..	no soy sauce!
 159635..	arepas,casual,drinks,venezuelan,venezuela
 160209..	deli,sandwiches
@@ -3049,7 +3049,7 @@
 170835..	
 170936..	 playground,andy cohen,bravo,bravoandy,brooklyn,cupcakes,dessert,douchebag,foodie,frat boy,gossip girl,puma social hot spot,socialite,tlc cupcakes,top chef
 171348..	
-171730..	 seafood,big bar area,close to msg,hot bartenders,pasta,tiled room
+171730..	 seafood,big bar area,hot bartenders,pasta,tiled room
 171959..	
 171965..	thai
 172514..	breakfast,burgers,shakes

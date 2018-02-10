@@ -26,7 +26,7 @@ namespace SPG.DataAccess
         public void SeedVenueTag(DataContext context)
         {
             string path = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\tag-venue-dataset.txt";
-            if (!context.Tag.Any() && !context.Venue.Any())
+            if (!context.Tag.Any())
             {
                 var results = from str in File.ReadAllLines(path)
                               where !String.IsNullOrEmpty(str)
