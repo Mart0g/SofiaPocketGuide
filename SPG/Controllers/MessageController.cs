@@ -29,7 +29,7 @@ namespace SPG.Controllers
         public ActionResult Message()
         {
             history.History = new List<MessageDTO>();
-            history.Current = new MessageDTO();
+            history.CurrentMessage = new MessageDTO();
             history.History.AddRange(messages);
             return View(history);
         }
@@ -37,10 +37,12 @@ namespace SPG.Controllers
         [HttpPost]
         public ActionResult ShowMessage(HistoryDTO model)
         {
-            string response = this.messageService.GetResponse(model.Current.Message);
-            history.History.Add(model.Current);
-            history.History.Add(new MessageDTO() { UserName = "SPG", Message = response });
-            history.Current = new MessageDTO();
+            string response = this.messageService.GetResponse(model.CurrentMessage.Message);
+            model.CurrentMessage.CreatedOn = DateTime.Now;
+            model.CurrentMessage.Type = MessageType.User;
+            history.History.Add(model.CurrentMessage);
+            history.History.Add(new MessageDTO() { UserName = "SPG", Message = response, Type= MessageType.Bot, CreatedOn=DateTime.Now });
+            history.CurrentMessage = new MessageDTO();
             ModelState.Clear();
             return View("Message", history);
         }

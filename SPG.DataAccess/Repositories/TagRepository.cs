@@ -22,9 +22,9 @@ namespace SPG.DataAccess.Repositories
             Context.Tag.Add(entity);
         }
 
-        public bool CheckWordInTags(string word)
+        public List<string> CheckWordInTags(string word)
         {
-            return !String.IsNullOrEmpty(Context.Tag.Where(t => t.Value.ToLower() == word.ToLower() || t.Value.ToLower().Contains(word.ToLower())).FirstOrDefault()?.Value);
+            return Context.Tag.Where(t => t.Value.ToLower() == word.ToLower()).Select(t=>t.Value).ToList();
         }
 
         public void Dispose()

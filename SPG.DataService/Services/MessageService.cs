@@ -35,35 +35,54 @@ namespace SPG.DataService.Services
                 tags = GetTagsFromWord2VecLogic(words);
             if (!tags.Any())
                 return $"I don't understand your question. Can you be more specific? :)";
-            List<VenueEntity> intersection = new List<VenueEntity>();
+            List<VenueEntity> minTags = new List<VenueEntity>();
             foreach (string tag in tags)
             {
                 List<VenueEntity> venues = DataAccessService.VenueRepository.GetVenuesWithUsers(tag);
-                if (intersection.Count == 0)
+                if (minTags.Count == 0)
                 {
-                    intersection = venues;
+                    minTags = venues;
                 }
-                intersection = venues.Intersect(intersection).ToList();
+                if (minTags.Count > venues.Count)
+                {
+                    minTags = venues;
+                }
             }
-            if (intersection.Count != 0)
+            if (minTags.Count != 0)
             {
-                int maxValue = intersection.Max(v => v.Users.Count);
-                VenueEntity final = intersection.Where(v => v.Users.Count == maxValue).FirstOrDefault();
-                return $"We recommend this venue: {final.VenueCode} with {final.Users.Count} total visits!";
+                int maxValue = minTags.Max(v => v.Users.Count);
+                VenueEntity final = minTags.Where(v => v.Users.Count == maxValue).FirstOrDefault();
+                string recommended = GetRecommendedMeals(final.Tags, words);
+                return $"SPG recommends this venue: {final.VenueCode}! It offers {recommended} and has {final.Users.Count} total visits!";
             }
             return $"I don't understand your question. Can you be more specific? :)";
         }
 
+        private string GetRecommendedMeals(List<TagEntity> tags, string[] words)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (TagEntity tag in tags)
+            {
+                foreach (string word in words)
+                {
+                    if ((tag.Value.ToLower().Contains(word.ToLower())
+                        || tag.Value.ToLower() == word.ToLower())
+                        && !sb.ToString().Contains(tag.Value))
+                    {
+                        sb.Append(tag.Value).Append(", ");
+                    }
+                }
+            }
+            sb.Remove(sb.Length - 2, 2);
+            return sb.ToString();
+        }
 
         private string[] GetTagsFromDataBase(string[] words)
         {
             List<string> foundTags = new List<string>();
             foreach (string word in words)
             {
-                if (this.DataAccessService.TagRepository.CheckWordInTags(word))
-                {
-                    foundTags.Add(word);
-                }
+                foundTags.AddRange(DataAccessService.TagRepository.CheckWordInTags(word));
             }
             return foundTags.ToArray();
         }

@@ -1,6 +1,6 @@
 ﻿@Styles.Render("~/Content/Site.css")
 @Styles.Render("~/Content/Message.css")
-
+@using SPG.DataViewModels.ViewModels
 @model SPG.DataViewModels.ViewModels.HistoryDTO
 
 <div class="container-chat">
@@ -12,17 +12,22 @@
 <div>
     @foreach (var item in Model.History)
     {
-        <div class="container-chat darker">
-            <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
-            <p>@Html.DisplayFor(modelItem => item.Message)</p>
-            <span class="time-left">@DateTime.Now</span>
-        </div>
-
-        <div class="container-chat">
-            <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
-            <p>How about this venue? Users have visited it in the last months.</p>
-            <span class="time-right">@DateTime.Now</span>
-        </div>
+        if (item.Type == MessageType.User)
+        {
+            <div class="container-chat darker">
+                <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
+                <p>@Html.DisplayFor(modelItem => item.Message)</p>
+                <span class="time-left">@DateTime.Now</span>
+            </div>
+        }
+        else if (item.Type == MessageType.Bot)
+        {
+            <div class="container-chat">
+                <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
+                <p>@Html.DisplayFor(modelItem => item.Message)</p>
+                <span class="time-right">@Html.DisplayFor(modelItem => item.CreatedOn)</span>
+            </div>
+        }
     }
 </div>
 
@@ -30,8 +35,8 @@
 {
     <div class="container">
         <div class="col-md-6">
-            @Html.TextAreaFor(model => model.Current.Message, new { @class = "container-chat lighter form-control" })
-            @Html.ValidationMessageFor(model => model.Current.Message)
+            @Html.TextAreaFor(model => model.CurrentMessage.Message, new { @class = "container-chat lighter form-control" })
+            @Html.ValidationMessageFor(model => model.CurrentMessage.Message)
         </div>
         <div class="col-md-6">
             <center>
