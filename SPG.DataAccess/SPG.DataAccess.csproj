@@ -54,6 +54,8 @@
     <Compile Include="DataContextInitializer.cs" />
     <Compile Include="Entities\MessageEntity.cs" />
     <Compile Include="Entities\NeedEntity.cs" />
+    <Compile Include="Entities\PrefixEntity.cs" />
+    <Compile Include="Entities\SuffixEntity.cs" />
     <Compile Include="Entities\TagEntity.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Entities\VenueEntity.cs" />
@@ -90,6 +92,10 @@
     <Compile Include="Migrations\201802072341536_User_Venue_Relation_Created.Designer.cs">
       <DependentUpon>201802072341536_User_Venue_Relation_Created.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802101539063_Prefixes_And_Suffixes.cs" />
+    <Compile Include="Migrations\201802101539063_Prefixes_And_Suffixes.Designer.cs">
+      <DependentUpon>201802101539063_Prefixes_And_Suffixes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802072341536_User_Venue_Relation_Created.resx">
       <DependentUpon>201802072341536_User_Venue_Relation_Created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802101539063_Prefixes_And_Suffixes.resx">
+      <DependentUpon>201802101539063_Prefixes_And_Suffixes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

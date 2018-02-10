@@ -24,7 +24,26 @@ namespace SPG.DataAccess.Repositories
 
         public List<string> CheckWordInTags(string word)
         {
-            return Context.Tag.Where(t => t.Value.ToLower() == word.ToLower()).Select(t=>t.Value).ToList();
+            return Context.Tag.Where(
+                t => (t.Value.ToLower() == word.ToLower())).Select(t => t.Value).ToList();
+        }
+        public List<string> CheckWordWithMorphemes(string word)
+        {
+            List<string> tags = new List<string>();
+            List<PrefixEntity> prefixes = Context.Prefix.ToList();
+            List<SuffixEntity> suffixes = Context.Suffix.ToList();
+            foreach (PrefixEntity prefix in prefixes)
+            {
+                tags.AddRange(Context.Tag.Where(
+                t => (t.Value.ToLower() == prefix.Value.ToLower() + word.ToLower())).Select(t => t.Value));
+            }
+            foreach (SuffixEntity suffix in suffixes)
+            {
+                tags.AddRange(Context.Tag.Where(
+                t => (t.Value.ToLower() == word.ToLower() + suffix.Value.ToLower())).Select(t => t.Value));
+            }
+
+            return tags;
         }
 
         public void Dispose()

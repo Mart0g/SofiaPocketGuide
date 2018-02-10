@@ -53,7 +53,7 @@ namespace SPG.DataService.Services
                 int maxValue = minTags.Max(v => v.Users.Count);
                 VenueEntity final = minTags.Where(v => v.Users.Count == maxValue).FirstOrDefault();
                 string recommended = GetRecommendedMeals(final.Tags, words);
-                return $"SPG recommends this venue: {final.VenueCode}! It offers {recommended} and has {final.Users.Count} total visits!";
+                return $"SPG recommends this venue: {final.VenueCode}!\n Tags: {recommended}\n Visits: {final.Users.Count}";
             }
             return $"I don't understand your question. Can you be more specific? :)";
         }
@@ -83,6 +83,7 @@ namespace SPG.DataService.Services
             foreach (string word in words)
             {
                 foundTags.AddRange(DataAccessService.TagRepository.CheckWordInTags(word));
+                foundTags.AddRange(DataAccessService.TagRepository.CheckWordWithMorphemes(word));
             }
             return foundTags.ToArray();
         }

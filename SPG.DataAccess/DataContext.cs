@@ -21,6 +21,8 @@ namespace SPG.DataAccess
         public DbSet<NeedEntity> Need { get; set; }
         public DbSet<TagEntity> Tag { get; set; }
         public DbSet<UserEntity> User { get; set; }
+        public DbSet<PrefixEntity> Prefix { get; set; }
+        public DbSet<SuffixEntity> Suffix { get; set; }
 
         protected override void OnModelCreating ( DbModelBuilder modelBuilder )
         {
@@ -30,8 +32,8 @@ namespace SPG.DataAccess
             modelBuilder.Entity<NeedEntity>().ToTable("Need");
             modelBuilder.Entity<TagEntity>().ToTable("Tag");
             modelBuilder.Entity<UserEntity>().ToTable("User");
+            modelBuilder.Entity<PrefixEntity>().ToTable("Prefix");
+            modelBuilder.Entity<SuffixEntity>().ToTable("Suffix");
         }
-
-        
     }
 }

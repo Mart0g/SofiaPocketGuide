@@ -18,6 +18,8 @@ namespace SPG.DataAccess
             base.InitializeDatabase(context);
             SeedVenueTag(context);
             SeedVenueUser(context);
+            SeedPrefixes(context);
+            SeedSuffixes(context);
             CreateWord2VecModel();
             GenerateSourceFile();
         }
@@ -168,6 +170,40 @@ namespace SPG.DataAccess
                     lines.Add(line);
                 }
                 File.WriteAllLines(targetPath, lines.ToArray());
+            }
+        }
+        public void SeedPrefixes(DataContext context)
+        {
+            string path = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\prefix-dataset.txt";
+            if (!context.Prefix.Any() && File.Exists(path))
+            {
+                var results = from str in File.ReadAllLines(path)
+                              where !String.IsNullOrEmpty(str)
+                              select str;
+
+                foreach (string item in results)
+                {
+                    PrefixEntity prefix = new PrefixEntity { Value = item };
+                    context.Prefix.Add(prefix);
+                    context.SaveChanges();                   
+                }
+            }
+        }
+        public void SeedSuffixes(DataContext context)
+        {
+            string path = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\suffix-dataset.txt";
+            if (!context.Suffix.Any() && File.Exists(path))
+            {
+                var results = from str in File.ReadAllLines(path)
+                              where !String.IsNullOrEmpty(str)
+                              select str;
+
+                foreach (string item in results)
+                {
+                    SuffixEntity suffix = new SuffixEntity { Value = item };
+                    context.Suffix.Add(suffix);
+                    context.SaveChanges();
+                }
             }
         }
     }

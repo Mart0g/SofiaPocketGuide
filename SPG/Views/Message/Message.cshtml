@@ -3,6 +3,8 @@
 @using SPG.DataViewModels.ViewModels
 @model SPG.DataViewModels.ViewModels.HistoryDTO
 
+@{bool show = false; }
+
 <div class="container-chat">
     <img src="/Content/images/chatbot.png" alt="Avatar" style="width:100%;">
     <p>Hi! How can I help you today?</p>
@@ -17,7 +19,7 @@
             <div class="container-chat darker">
                 <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
                 <p>@Html.DisplayFor(modelItem => item.Message)</p>
-                <span class="time-left">@DateTime.Now</span>
+                <span class="time-left">@Html.DisplayFor(modelItem => item.CreatedOn)</span>
             </div>
         }
         else if (item.Type == MessageType.Bot)
@@ -30,7 +32,14 @@
         }
     }
 </div>
-
+@if (show)
+{
+    <div class="container-chat darker">
+        <img src="/Content/images/person.png" alt="Avatar" class="right" style="width:100%;" />
+        <p>@Html.DisplayFor(modelItem => Model.CurrentMessage.Message)</p>
+        <span class="time-left">@Html.DisplayFor(modelItem => Model.CurrentMessage.CreatedOn)</span>
+    </div>
+}
 @using (Html.BeginForm("ShowMessage", "Message", FormMethod.Post))
 {
     <div class="container">
@@ -40,9 +49,17 @@
         </div>
         <div class="col-md-6">
             <center>
-                <button class="send btn btn-primary btn-large" type="submit">Send</button>
+                <button class="send btn btn-primary btn-large" beforeSubmit="displayCurrent()" type="submit">Send</button>
             </center>
         </div>
     </div>
 }
 
+<script>
+    function displayCurrent() {
+        @{
+            show = true;
+        }
+        return true;
+    }
+</script>

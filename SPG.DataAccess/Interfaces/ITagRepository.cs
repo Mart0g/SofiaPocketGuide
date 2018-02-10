@@ -10,5 +10,6 @@ namespace SPG.DataAccess.Interfaces
     public interface ITagRepository: IDisposable, IBaseRepository<TagEntity>
     {
         List<string> CheckWordInTags(string word);
+        List<string> CheckWordWithMorphemes(string word);
     }
 }
