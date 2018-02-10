@@ -53,6 +53,8 @@ namespace SPG.DataService.Services
                 int maxValue = minTags.Max(v => v.Users.Count);
                 VenueEntity final = minTags.Where(v => v.Users.Count == maxValue).FirstOrDefault();
                 string recommended = GetRecommendedMeals(final.Tags, words);
+                if (String.IsNullOrWhiteSpace(recommended))
+                    recommended = "none";
                 return $"SPG recommends this venue: {final.VenueCode}!\n Tags: {recommended}\n Visits: {final.Users.Count}";
             }
             return $"I don't understand your question. Can you be more specific? :)";
@@ -73,7 +75,8 @@ namespace SPG.DataService.Services
                     }
                 }
             }
-            sb.Remove(sb.Length - 2, 2);
+            if (sb.Length > 3)
+                sb.Remove(sb.Length - 2, 2);
             return sb.ToString();
         }
 
