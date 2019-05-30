@@ -52,22 +52,6 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataAccessService.cs" />
     <Compile Include="DataContextInitializer.cs" />
-    <Compile Include="Entities\MessageEntity.cs" />
-    <Compile Include="Entities\NeedEntity.cs" />
-    <Compile Include="Entities\PrefixEntity.cs" />
-    <Compile Include="Entities\SuffixEntity.cs" />
-    <Compile Include="Entities\TagEntity.cs" />
-    <Compile Include="Entities\UserEntity.cs" />
-    <Compile Include="Entities\VenueEntity.cs" />
-    <Compile Include="Entities\WordEntity.cs" />
-    <Compile Include="IDataAccessService.cs" />
-    <Compile Include="Interfaces\IBaseRepository.cs" />
-    <Compile Include="Interfaces\IMessageRepository.cs" />
-    <Compile Include="Interfaces\INeedRepository.cs" />
-    <Compile Include="Interfaces\ITagRepository.cs" />
-    <Compile Include="Interfaces\IVenueRepository.cs" />
-    <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Interfaces\IWordRepository.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.Designer.cs">
       <DependentUpon>201801131455552_InitialCreate.cs</DependentUpon>
@@ -137,9 +121,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\SPG.DataViewModels\SPG.DataViewModels.csproj">
-      <Project>{EB5951EF-C21C-4F0F-8905-09BC8D7C6952}</Project>
-      <Name>SPG.DataViewModels</Name>
+    <ProjectReference Include="..\SPG.Domain\SPG.Domain.csproj">
+      <Project>{f6962348-d76a-42c0-84f4-c14fc53d1941}</Project>
+      <Name>SPG.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Word2Vec.Net\Word2Vec.Net.csproj">
       <Project>{fefca2dc-137b-4eee-a779-0194bdfebe1f}</Project>
@@ -150,8 +134,6 @@
     <Content Include="DataSets\tag-venue-dataset.txt" />
     <Content Include="DataSets\tip-venue-dataset.txt" />
     <Content Include="DataSets\user-venue-dataset.txt" />
-    <Content Include="Word2VecFiles\source-word-2-vec-file.txt" />
-    <Content Include="Word2VecFiles\vector.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,12 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetModels\TagVenueDSM.cs" />
-    <Compile Include="DataSetModels\UserVenueDSM.cs" />
-    <Compile Include="DataSetModels\TipVenueDSM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HistoryDTO.cs" />
-    <Compile Include="ViewModels\MessageDTO.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,12 +1,7 @@
-﻿using SPG.DataAccess;
-using SPG.DataAccess.Interfaces;
+﻿using SPG.Domain.Interfaces.Repositories;
+using SPG.Domain.Interfaces.Services;
 using SPG.DataAccess.Repositories;
 using SPG.DataAccess.Unit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SPG.DataAccess
 {

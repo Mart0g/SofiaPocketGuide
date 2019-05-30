@@ -1,10 +1,5 @@
-﻿using SPG.DataAccess.Entities;
-using System;
-using System.Collections.Generic;
+﻿using SPG.Domain.Models.Entities;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SPG.DataAccess
 {

@@ -1,13 +1,10 @@
-﻿using SPG.DataService.Interfaces;
+﻿using SPG.DataAccess;
+using SPG.DataService.Interfaces;
 using SPG.DataService.Services;
-using SPG.DataViewModels.ViewModels;
+using SPG.Domain.Models.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Word2vec.Tools;
-using Word2Vec.Net;
 
 namespace SPG.Controllers
 {
@@ -18,7 +15,7 @@ namespace SPG.Controllers
         private static HistoryDTO history = new HistoryDTO();
         public MessageController()
         {
-            this.messageService = new MessageService(new DataAccess.DataAccessService());
+            this.messageService = new MessageService(new DataAccessService());
         }
 
         public MessageController(MessageService messageService)

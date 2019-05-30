@@ -1,12 +1,10 @@
-﻿using SPG.DataAccess.Entities;
-using SPG.DataViewModels.DataSetModels;
+﻿using SPG.Domain.Models.DataSetModels;
+using SPG.Domain.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Word2Vec.Net;
 
 namespace SPG.DataAccess
@@ -117,11 +115,12 @@ namespace SPG.DataAccess
                 }
             }
         }
+
         public void CreateWord2VecModel()
         {
-            string trainFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\source-word-2-vec-file.txt";
-            string outputFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\vector.txt";
-            string vocubFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\Word2VecFiles\vocub.txt";
+            string trainFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.Word2Vec\Word2VecFiles\source-word-2-vec-file.txt";
+            string outputFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.Word2Vec\Word2VecFiles\vector.txt";
+            string vocubFile = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.Word2Vec\Word2VecFiles\vocub.txt";
 
             if (!File.Exists(outputFile) && !File.Exists(vocubFile) && File.Exists(trainFile))
             {
@@ -135,6 +134,7 @@ namespace SPG.DataAccess
                 word2Vec.TrainModel();
             }
         }
+
         public void GenerateSourceFile()
         {
 
@@ -172,6 +172,7 @@ namespace SPG.DataAccess
                 File.WriteAllLines(targetPath, lines.ToArray());
             }
         }
+
         public void SeedPrefixes(DataContext context)
         {
             string path = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\prefix-dataset.txt";
@@ -189,6 +190,7 @@ namespace SPG.DataAccess
                 }
             }
         }
+
         public void SeedSuffixes(DataContext context)
         {
             string path = @"C:\Users\dido_\Documents\GitHub\SofiaPocketGuide\SPG.DataAccess\DataSets\suffix-dataset.txt";
