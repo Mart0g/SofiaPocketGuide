@@ -10,15 +10,17 @@ namespace SPG.Controllers
 {
     public class MessageController : Controller
     {
+
         private readonly IMessageService messageService;
         List<MessageDTO> messages = new List<MessageDTO>();
         private static HistoryDTO history = new HistoryDTO();
+
         public MessageController()
         {
-            this.messageService = new MessageService(new DataAccessService());
+            this.messageService = new MessageService(new DataAccessService("name=SPG.DataAccess2"));
         }
 
-        public MessageController(MessageService messageService)
+        public MessageController(IMessageService messageService)
         {
             this.messageService = messageService;
         }
@@ -38,7 +40,7 @@ namespace SPG.Controllers
             model.CurrentMessage.CreatedOn = DateTime.Now;
             model.CurrentMessage.Type = MessageType.User;
             history.History.Add(model.CurrentMessage);
-            history.History.Add(new MessageDTO() { UserName = "SPG", Message = response, Type= MessageType.Bot, CreatedOn=DateTime.Now });
+            history.History.Add(new MessageDTO() { UserName = "SPG", Message = response, Type = MessageType.Bot, CreatedOn = DateTime.Now });
             history.CurrentMessage = new MessageDTO();
             ModelState.Clear();
             return View("Message", history);

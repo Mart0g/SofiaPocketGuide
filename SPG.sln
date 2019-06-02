@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.Domain", "SPG.Domain\SP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.Word2Vec", "SPG.Word2Vec\SPG.Word2Vec.csproj", "{325F11E7-EC1C-474E-8917-17E74099767D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPG.Console", "SPG.Console\SPG.Console.csproj", "{6C44129B-DB4B-4042-A1E3-F6BCADA1E4EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{325F11E7-EC1C-474E-8917-17E74099767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325F11E7-EC1C-474E-8917-17E74099767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325F11E7-EC1C-474E-8917-17E74099767D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C44129B-DB4B-4042-A1E3-F6BCADA1E4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C44129B-DB4B-4042-A1E3-F6BCADA1E4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C44129B-DB4B-4042-A1E3-F6BCADA1E4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C44129B-DB4B-4042-A1E3-F6BCADA1E4EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

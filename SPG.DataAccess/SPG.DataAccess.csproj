@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="DataAccessService.cs" />
-    <Compile Include="DataContextInitializer.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.cs" />
     <Compile Include="Migrations\201801131455552_InitialCreate.Designer.cs">
       <DependentUpon>201801131455552_InitialCreate.cs</DependentUpon>
@@ -79,6 +78,10 @@
     <Compile Include="Migrations\201802101539063_Prefixes_And_Suffixes.cs" />
     <Compile Include="Migrations\201802101539063_Prefixes_And_Suffixes.Designer.cs">
       <DependentUpon>201802101539063_Prefixes_And_Suffixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906021128221_SPG_Update.cs" />
+    <Compile Include="Migrations\201906021128221_SPG_Update.Designer.cs">
+      <DependentUpon>201906021128221_SPG_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +115,9 @@
     <EmbeddedResource Include="Migrations\201802101539063_Prefixes_And_Suffixes.resx">
       <DependentUpon>201802101539063_Prefixes_And_Suffixes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906021128221_SPG_Update.resx">
+      <DependentUpon>201906021128221_SPG_Update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -129,11 +135,6 @@
       <Project>{fefca2dc-137b-4eee-a779-0194bdfebe1f}</Project>
       <Name>Word2Vec.Net</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataSets\tag-venue-dataset.txt" />
-    <Content Include="DataSets\tip-venue-dataset.txt" />
-    <Content Include="DataSets\user-venue-dataset.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,6 +6,7 @@ using System.Linq;
 using Word2vec.Tools;
 using Word2Vec.Net;
 
+
 namespace SPG.Word2Vec
 {
     public class Word2VecService : ITransformable

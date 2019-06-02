@@ -27,26 +27,25 @@ namespace SPG.DataService.Services
 
         public string GetResponse(string message)
         {
+            if (String.IsNullOrEmpty(message)) return "I don't understand your question. Can you be more specific? :)";
+
             string[] words = message.Split(' ', ',', '.', '\'', '?', '!', '/', '\\', ')', '(', ';', ':', '-', '_', '@', '#', '"', '+');
             string[] tags = GetTagsFromDataBase(words);
             if (!tags.Any())
                 tags = GetTagsFromWord2VecLogic(words);
             if (!tags.Any())
                 return "I don't understand your question. Can you be more specific? :)";
-            List<VenueEntity> minTags = new List<VenueEntity>();
+            IEnumerable<VenueEntity> minTags = null;
             foreach (string tag in tags)
             {
                 List<VenueEntity> venues = DataAccessService.VenueRepository.GetVenuesWithUsers(tag);
-                if (minTags.Count == 0)
+                if (venues.Count != 0)
                 {
                     minTags = venues;
-                }
-                if (minTags.Count > venues.Count)
-                {
-                    minTags = venues;
+                    break;
                 }
             }
-            if (minTags.Count != 0)
+            if (minTags != null && minTags.Count() != 0)
             {
                 int maxValue = minTags.Max(v => v.Users.Count);
                 VenueEntity final = minTags.Where(v => v.Users.Count == maxValue).FirstOrDefault();

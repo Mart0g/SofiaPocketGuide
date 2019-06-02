@@ -8,9 +8,9 @@ namespace SPG.DataAccess
     public class DataAccessService : IDataAccessService, IUnitOfWork
     {
 
-        public DataAccessService()
+        public DataAccessService(string connectionString)
         {
-            DataContext context = new DataContext();
+            DataContext context = new DataContext(connectionString);
             Context = context;
             MessageRepository = new MessageRepository(context);
             NeedRepository = new NeedRepository(context);

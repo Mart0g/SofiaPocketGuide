@@ -1,12 +1,8 @@
 ﻿using SPG.DataAccess;
-using SPG.DataService;
 using SPG.DataService.Interfaces;
 using SPG.DataService.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using SPG.Domain.Interfaces.Services;
 using System.Web.Http;
-using System.Web.Mvc;
 using Unity;
 using Unity.Lifetime;
 
@@ -29,6 +25,7 @@ namespace SPG
 
             var container = new UnityContainer();
             container.RegisterType<IMessageService, MessageService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IDataAccessService, DataAccessService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
         }
     }

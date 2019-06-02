@@ -5,7 +5,12 @@ namespace SPG.DataAccess
 {
     public class DataContext: DbContext
     {
-        public DataContext (): base("name=SPG.DataAccess")
+        public DataContext (): base("name=SPG.DataAccess2")
+        {
+
+        }
+
+        public DataContext(string connectionString) : base(connectionString)
         {
 
         }

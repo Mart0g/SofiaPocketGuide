@@ -38,8 +38,8 @@ namespace SPG.DataAccess.Repositories
         {
             return Context.Venue.Include("Tags").Include("Users").
                            Where(v => v.Tags.
-                                            Where(t => t.Value.ToLower() == tag.ToLower() || t.Value.Contains(tag)).
-                                            FirstOrDefault() != null).ToList();
+                           Where(t => t.Value.ToLower() == tag.ToLower() || t.Value.Contains(tag)).
+                           FirstOrDefault() != null).Take(5).ToList();
         }
 
         public void Remove(VenueEntity entity)
